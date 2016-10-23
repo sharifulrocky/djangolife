@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+
+{% block title %} Django Life {% endblock %}
+
+{% block body %}
+    <div class="row" xmlns="http://www.w3.org/1999/html">
+        {% for video in videos %}
+              <div class="col-md-6">
+                    {{ video.embed_code|safe }}
+              </div>
+
+        {% endfor %}
+     </div>
+{% endblock %}
