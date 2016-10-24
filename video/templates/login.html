@@ -1,0 +1,20 @@
+{% extends 'master.html' %}
+
+{% block title %} Login Form {% endblock %}
+
+{% block body %}
+    <form method="POST" class="form-inline">
+        <div class="form-group">
+            {{ form.as_p }}
+{#            <label for="username">User Name:</label>#}
+{#            <input class="form-control" type="text" name="username">#}
+{##}
+{#            <label for="password">Password:</label>#}
+{#            <input class="form-control" type="password" name="password">#}
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+        {% csrf_token %}
+    </form>
+
+{% endblock %}

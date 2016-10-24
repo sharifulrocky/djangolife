@@ -1,0 +1,13 @@
+{% extends 'master.html' %}
+
+{% block title %} Registration Form {% endblock %}
+
+{% block body %}
+    <form method="POST" class="form-inline">
+        <div class="form-group">
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+        {% csrf_token %}
+    </form>
+{% endblock %}
