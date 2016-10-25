@@ -7,7 +7,7 @@ from .forms import LoginForm
 
 
 def home(request):
-    videos = Video.objects.all().order_by('-title')
+    videos = Video.objects.all().order_by('title')[:2]
     return render(request, 'home.html', {'videos': videos})
 
 
@@ -16,7 +16,7 @@ def login(request):
         form = LoginForm(request.POST)
         user = form.authenticate()
         if user:
-            return HttpResponse("Successful")
+            return redirect('/')
         else:
             return HttpResponse("Login Failed")
     else:
